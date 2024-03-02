@@ -15,28 +15,28 @@ class _AddQuestionState extends State<AddQuestion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.black),
-      backgroundColor: Colors.black,
+      appBar: AppBar(backgroundColor: Colors.white),
       body: Consumer<AddQuestionsViewModel>(
           builder: (context, addquestionmodel, _) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: ListView(
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFields(
                 controller: addquestionmodel.questioncontroller,
                 name: "Question",
-                color: Colors.white,
+                color: Colors.black,
               ),
               TextFields(
                 controller: addquestionmodel.answercontroller,
                 name: "Answer",
-                color: Colors.white,
+                color: Colors.black,
                 maxLines: 8,
               ),
               ElevatedButton(
                   onPressed: () {
+                    addquestionmodel.storeData();
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const CreateQuestion(),
                     ));

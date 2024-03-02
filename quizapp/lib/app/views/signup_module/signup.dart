@@ -28,7 +28,6 @@ class _SignUpState extends State<SignUp> {
                 controller: signupmodel.namecontroller,
                 name: "Name",
                 color: Colors.black,
-                
               ),
               TextFields(
                   controller: signupmodel.passwordcontroller,
@@ -40,6 +39,7 @@ class _SignUpState extends State<SignUp> {
                   color: Colors.black),
               ElevatedButton(
                   onPressed: () {
+                    signupmodel.saveData();
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const ParentHome(),
                     ));
